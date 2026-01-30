@@ -50,34 +50,28 @@ const Portfolio = () => {
   const certificates = [
     {
       title: "FreeCodeCamp JavaScript",
-      provider: "Coursera",
-      year: "2025",
       image: cert1,
     },
     {
       title: "Network Fundamentals",
-      provider: "Coursera",
-      year: "2025",
       image: cert2,
     },
     {
-      title: "Data Structures",
-      provider: "Coursera",
-      year: "2025",
+      title: "Data Science",
       image: cert3,
     },
   ]
 
   const SkillGroup = ({ title, icons }) => (
-    <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+    <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-100 shadow-sm">
       <h3 className="font-semibold mb-4">{title}</h3>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-3 md:gap-4">
         {icons.map((icon, i) => (
           <img
             key={i}
             src={`https://skillicons.dev/icons?i=${icon}`}
             alt={icon}
-            className="w-12 h-12"
+            className="w-10 h-10 md:w-12 md:h-12"
           />
         ))}
       </div>
@@ -88,7 +82,7 @@ const Portfolio = () => {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
       {/* NAV */}
       <nav className="fixed w-full bg-white/80 backdrop-blur z-50 border-b border-slate-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
           <span className="font-bold text-lg">My Portfolio</span>
           <div className="hidden md:flex gap-6 text-slate-600 font-medium">
             <a href="#about" className="hover:text-indigo-600">About</a>
@@ -100,20 +94,20 @@ const Portfolio = () => {
       </nav>
 
       {/* ABOUT */}
-      <section id="about" className="pt-40 pb-24 px-6">
+      <section id="about" className="pt-32 md:pt-40 pb-20 md:pb-24 px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <img
             src={profileImg}
             alt="Profile"
-            className="w-36 h-36 rounded-full mx-auto mb-6 object-cover shadow"
+            className="w-32 h-32 md:w-36 md:h-36 rounded-full  mx-auto mb-6 object-cover shadow"
           />
 
-          <h2 className="text-2xl font-semibold">Kittigon Thapin</h2>
-          <h1 className="text-4xl md:text-5xl font-extrabold mt-1 mb-6">
+          <h2 className="text-xl md:text-2xl font-semibold">Kittigon Thapin</h2>
+          <h1 className="text-3xl md:text-5xl font-extrabold mt-1 mb-6">
             Fullstack <span className="text-slate-400">Developer</span> Intern
           </h1>
 
-          <div className="bg-white p-8 rounded-2xl shadow border border-slate-100 text-left space-y-4 text-lg">
+          <div className="bg-white p-5 md:p-8 rounded-2xl shadow border border-slate-100 text-left space-y-4 text-base md:text-lg">
             <p>
               ผมเป็นนิสิตสาขาวิทยาการคอมพิวเตอร์ที่มีความสนใจด้านการพัฒนา Web Application
               และเทคโนโลยีปัญญาประดิษฐ์ (Artificial Intelligence)
@@ -141,19 +135,19 @@ const Portfolio = () => {
             </p>
           </div>
 
-          <div className="mt-10 flex justify-center gap-4 flex-wrap">
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="https://github.com/Kittigon"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white hover:scale-105 transition"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white hover:scale-105 transition"
             >
               <Github size={20} />
               GitHub
             </a>
             <a
               href="mailto:kittigonthapin04@gmail.com"
-              className="flex items-center gap-2 px-6 py-3 rounded-full border hover:text-indigo-600 hover:border-indigo-300 transition"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border hover:text-indigo-600 hover:border-indigo-300 transition"
             >
               <Mail size={20} />
               kittigonthapin04@gmail.com
@@ -163,33 +157,33 @@ const Portfolio = () => {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="py-20 px-6">
+      <section id="skills" className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-10">Skills</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SkillGroup title="Frontend" icons={["react", "nextjs", "tailwind", "html", "css", "js"]} />
             <SkillGroup title="Backend" icons={["nodejs", "python"]} />
-            <SkillGroup title="Database" icons={["mysql",'supabase']} />
-            <SkillGroup title="Tools & AI" icons={["git", "github",'postman']} />
+            <SkillGroup title="Database" icons={["mysql", "supabase"]} />
+            <SkillGroup title="Tools & AI" icons={["git", "github", "postman"]} />
           </div>
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section id="projects" className="py-20 px-6">
+      <section id="projects" className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-10">Projects</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((p, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-6 shadow hover:shadow-xl transition"
+                className="bg-white rounded-2xl p-4 md:p-6 shadow hover:shadow-xl transition"
               >
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="h-56 w-full object-contain mb-4"
+                  className="h-44 sm:h-56 w-full object-contain mb-4"
                 />
 
                 <h3 className="text-xl font-bold">{p.title}</h3>
@@ -233,22 +227,19 @@ const Portfolio = () => {
       </section>
 
       {/* CERTIFICATES */}
-      <section id="certificates" className="py-20 px-6">
+      <section id="certificates" className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold mb-10">Certificates</h2>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
             {certificates.map((c, i) => (
               <div key={i} className="text-center">
                 <img
                   src={c.image}
                   alt={c.title}
-                  className="max-w-md mx-auto object-contain"
+                  className="w-full max-w-xs sm:max-w-md mx-auto object-contain"
                 />
                 <h3 className="font-semibold mt-4">{c.title}</h3>
-                <p className="text-sm text-slate-500">
-                  {c.provider} • {c.year}
-                </p>
               </div>
             ))}
           </div>
@@ -256,7 +247,7 @@ const Portfolio = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-slate-500">
+      <footer className="py-8 md:py-10 text-center text-xs md:text-sm text-slate-500">
         © 2025 Kittigon Thapin · Fullstack Developer Intern
       </footer>
     </div>
