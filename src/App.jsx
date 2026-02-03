@@ -7,6 +7,7 @@ import chatbot from "./assets/chatbot.png"
 import cert1 from "./assets/certificateJs.png"
 import cert2 from "./assets/certificateNW.png"
 import cert3 from "./assets/certificateDS.png"
+import cert4 from "./assets/certificateAI.png"
 
 const Portfolio = () => {
   const projects = [
@@ -59,6 +60,9 @@ const Portfolio = () => {
     {
       title: "Data Science",
       image: cert3,
+    },
+    {      title: "Artificial Intelligence",
+      image: cert4,
     },
   ]
 
